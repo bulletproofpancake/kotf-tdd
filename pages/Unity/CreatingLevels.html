@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Creating Levels - Keeper of the Flame Technical Document</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Table of Contents</a></li><li class="chapter-item expanded affix "><li class="part-title">Classes</li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Managers</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../pages/Classes/Core/Managers/AudioManager.html"><strong aria-hidden="true">1.1.</strong> Audio Manager</a></li><li class="chapter-item expanded "><a href="../../pages/Classes/Core/Managers/GameManager.html"><strong aria-hidden="true">1.2.</strong> Game Manager</a></li><li class="chapter-item expanded "><a href="../../pages/Classes/Core/Managers/GameUIManager.html"><strong aria-hidden="true">1.3.</strong> Game UI Manager</a></li><li class="chapter-item expanded "><a href="../../pages/Classes/Core/Managers/LevelManager.html"><strong aria-hidden="true">1.4.</strong> Level Manager</a></li><li class="chapter-item expanded "><a href="../../pages/Classes/Core/Managers/SystemUIManager.html"><strong aria-hidden="true">1.5.</strong> System UI Manager</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> System</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../pages/Classes/Core/System/EnemySpawnPoints.html"><strong aria-hidden="true">2.1.</strong> Enemy Spawn Points</a></li><li class="chapter-item expanded "><a href="../../pages/Classes/Core/System/Singleton.html"><strong aria-hidden="true">2.2.</strong> Singleton</a></li><li class="chapter-item expanded "><a href="../../pages/Classes/Core/System/Sound.html"><strong aria-hidden="true">2.3.</strong> Sound</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Player</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../pages/Classes/Gameplay/Characters/Player/Animation.html"><strong aria-hidden="true">3.1.</strong> Animation</a></li><li class="chapter-item expanded "><a href="../../pages/Classes/Gameplay/Characters/Player/Combat.html"><strong aria-hidden="true">3.2.</strong> Combat</a></li><li class="chapter-item expanded "><a href="../../pages/Classes/Gameplay/Characters/Player/Input.html"><strong aria-hidden="true">3.3.</strong> Input</a></li><li class="chapter-item expanded "><a href="../../pages/Classes/Gameplay/Characters/Player/Movement.html"><strong aria-hidden="true">3.4.</strong> Movement</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Enemy</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../pages/Classes/Gameplay/Characters/Enemy/Class.html"><strong aria-hidden="true">4.1.</strong> Enemy Class</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Unity</li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Prefabs</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.</strong> Characters</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../pages/Unity/Prefabs/Characters/Player.html"><strong aria-hidden="true">5.1.1.</strong> Player</a></li><li class="chapter-item expanded "><a href="../../pages/Unity/Prefabs/Characters/Enemy.html"><strong aria-hidden="true">5.1.2.</strong> Enemy</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.2.</strong> Items</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../pages/Unity/Prefabs/Items/Door.html"><strong aria-hidden="true">5.2.1.</strong> Door</a></li><li class="chapter-item expanded "><a href="../../pages/Unity/Prefabs/Items/Gem.html"><strong aria-hidden="true">5.2.2.</strong> Gem</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Setting up the game</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../pages/Unity/CreatingLevels.html" class="active"><strong aria-hidden="true">6.1.</strong> Creating Levels</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Keeper of the Flame Technical Document</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="creating-levels"><a class="header" href="#creating-levels">Creating Levels</a></h1>
+<blockquote>
+<p><strong>NOTE:</strong> <a href="../Classes/Core/Managers/LevelManager.html"><code>LevelManager</code></a> is hardcoded to only use two levels for now.</p>
+</blockquote>
+<h2 id="creating-the-levels"><a class="header" href="#creating-the-levels">Creating the levels</a></h2>
+<ol>
+<li>In the Heirarchy, look for the <code>Grid</code> gameobject under <code>== LEVEL ==</code>
+<br><img src="../../attachments/Unity/Creating%20Levels/Creating%20the%20levels/Step%201.gif" alt="Step 1" /></li>
+<li>Add a child <code>Rectangular Tilemap</code> to <code>Grid</code> and name it <code>Level x</code> where <code>x</code> is the number of the level
+<br><img src="../../attachments/Unity/Creating%20Levels/Creating%20the%20levels/Step%202.gif" alt="Step 2" /></li>
+<li>In the inspector, add a <code>Tilemap Collider 2D</code> and <code>Composite Collider 2D</code> to <code>Level x</code>
+<br><img src="../../attachments/Unity/Creating%20Levels/Creating%20the%20levels/Step%203.gif" alt="Step 3" /></li>
+<li>On <code>Tilemap Collider 2D</code>, tick the <code>Used By Composite</code> box and set the <code>Body Type</code> to <code>Static</code> in the <code>Rigidbody2D</code> component
+<br><img src="../../attachments/Unity/Creating%20Levels/Creating%20the%20levels/Step%204.gif" alt="Step 4" /></li>
+<li>Draw the level using the <code>Tile Pallete</code>
+<br><img src="../../attachments/Unity/Creating%20Levels/Creating%20the%20levels/Step%205.gif" alt="Step 5" /></li>
+<li>Set a <code>Ground</code> tag on the level. 
+<br><img src="../../attachments/Unity/Creating%20Levels/Creating%20the%20levels/Step%206.gif" alt="Step 6" /></li>
+<li>Repeat steps 2 - 6 for each level needed.</li>
+</ol>
+<h2 id="setting-the-placements"><a class="header" href="#setting-the-placements">Setting the placements</a></h2>
+<blockquote>
+<p><strong>NOTE:</strong> <code>Player Spawn</code> is also where the <code>Door</code> spawns so it is important to always keep it accessible.</p>
+</blockquote>
+<ol>
+<li>Create an empty gameobject, name it <code>Player Spawn</code>, give it a gizmo for visibility, set its position, and place it under <code>== SPAWN LOCATIONS ==</code>
+<br><img src="../../attachments/Unity/Creating%20Levels/Setting%20the%20placements/Step1.gif" alt="Step 1" /></li>
+<li>Duplicate <code>Player Spawn</code>, name it <code>Gem Spawn</code> and change its gizmo and location, and place it under <code>== SPAWN LOCATIONS ==</code>
+<br><img src="../../attachments/Unity/Creating%20Levels/Setting%20the%20placements/Step2.gif" alt="Step 2" /></li>
+<li>Create an empty gameobject, name it <code>Enemy Spawns</code> and place it under <code>== SPAWN LOCATIONS ==</code>
+<br><img src="../../attachments/Unity/Creating%20Levels/Setting%20the%20placements/Step3.1.gif" alt="Step 3.1" /></li>
+<li>Create a child gameobject under <code>Enemy Spawns</code> and name it after the intended level of that enemy spawn position. Add an <code>EnemySpawnPoints</code> to that child object.
+<br><img src="../../attachments/Unity/Creating%20Levels/Setting%20the%20placements/Step3.2.gif" alt="Step 3.2" /></li>
+<li>Add child gameobjects to the <code>Level</code> and set its positions. These are where the enemies will spawn.
+<br><img src="../../attachments/Unity/Creating%20Levels/Setting%20the%20placements/Step3.3.gif" alt="Step 3.3" /></li>
+<li>Go to the parent gameobject and lock its properties in the inspector. Grab the enemy positions and place it in the `` field in the <code>EnemySpawnPoints</code>
+<br><img src="../../attachments/Unity/Creating%20Levels/Setting%20the%20placements/Step3.4.gif" alt="Step 3.4" /></li>
+<li>Repeat steps 4-6 for each level made.</li>
+</ol>
+<blockquote>
+<p><strong>NOTE:</strong> As of the moment, each level has to have the same amount of spawn locations for the enemies in order to spawn properly.</p>
+</blockquote>
+<h2 id="using-the-levelmanager"><a class="header" href="#using-the-levelmanager">Using the LevelManager</a></h2>
+<ol>
+<li>Under <code>== MANAGER ==</code> look for <code>LevelManager</code>, and lock its properties in the inspector.
+<br><img src="../../attachments/Unity/Creating%20Levels/Using%20the%20LevelManager/Step1.gif" alt="Step 1" /></li>
+<li>In the <code>LevelManager</code>, attach the created levels under the <code>Levels</code> field, place the <code>Player Spawn</code> gameobject under the <code>Player Spawn</code> field, add the <code>Gem Spawn</code> gameobject to the <code>Gem Spawn Point</code> field, and finally grab the levels under <code>Enemy Spawn</code> and drag it to the <code>EnemySpawnPoints</code> field.
+<br><img src="../../attachments/Unity/Creating%20Levels/Using%20the%20LevelManager/Step2.gif" alt="Step 2" /></li>
+<li>Enter play mode and it should be able to load all the levels and enemies properly.
+<br> <img src="../../attachments/Unity/Creating%20Levels/Using%20the%20LevelManager/Step3.gif" alt="Step 3" /></li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../pages/Unity/Prefabs/Items/Gem.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../pages/Unity/Prefabs/Items/Gem.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

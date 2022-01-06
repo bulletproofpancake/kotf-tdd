@@ -1,0 +1,1735 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Keeper of the Flame Technical Document</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Table of Contents</a></li><li class="chapter-item expanded affix "><li class="part-title">Classes</li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Managers</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="pages/Classes/Core/Managers/AudioManager.html"><strong aria-hidden="true">1.1.</strong> Audio Manager</a></li><li class="chapter-item expanded "><a href="pages/Classes/Core/Managers/GameManager.html"><strong aria-hidden="true">1.2.</strong> Game Manager</a></li><li class="chapter-item expanded "><a href="pages/Classes/Core/Managers/GameUIManager.html"><strong aria-hidden="true">1.3.</strong> Game UI Manager</a></li><li class="chapter-item expanded "><a href="pages/Classes/Core/Managers/LevelManager.html"><strong aria-hidden="true">1.4.</strong> Level Manager</a></li><li class="chapter-item expanded "><a href="pages/Classes/Core/Managers/SystemUIManager.html"><strong aria-hidden="true">1.5.</strong> System UI Manager</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> System</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="pages/Classes/Core/System/EnemySpawnPoints.html"><strong aria-hidden="true">2.1.</strong> Enemy Spawn Points</a></li><li class="chapter-item expanded "><a href="pages/Classes/Core/System/Singleton.html"><strong aria-hidden="true">2.2.</strong> Singleton</a></li><li class="chapter-item expanded "><a href="pages/Classes/Core/System/Sound.html"><strong aria-hidden="true">2.3.</strong> Sound</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Player</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="pages/Classes/Gameplay/Characters/Player/Animation.html"><strong aria-hidden="true">3.1.</strong> Animation</a></li><li class="chapter-item expanded "><a href="pages/Classes/Gameplay/Characters/Player/Combat.html"><strong aria-hidden="true">3.2.</strong> Combat</a></li><li class="chapter-item expanded "><a href="pages/Classes/Gameplay/Characters/Player/Input.html"><strong aria-hidden="true">3.3.</strong> Input</a></li><li class="chapter-item expanded "><a href="pages/Classes/Gameplay/Characters/Player/Movement.html"><strong aria-hidden="true">3.4.</strong> Movement</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Enemy</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="pages/Classes/Gameplay/Characters/Enemy/Class.html"><strong aria-hidden="true">4.1.</strong> Enemy Class</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Unity</li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Prefabs</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.</strong> Characters</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="pages/Unity/Prefabs/Characters/Player.html"><strong aria-hidden="true">5.1.1.</strong> Player</a></li><li class="chapter-item expanded "><a href="pages/Unity/Prefabs/Characters/Enemy.html"><strong aria-hidden="true">5.1.2.</strong> Enemy</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.2.</strong> Items</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="pages/Unity/Prefabs/Items/Door.html"><strong aria-hidden="true">5.2.1.</strong> Door</a></li><li class="chapter-item expanded "><a href="pages/Unity/Prefabs/Items/Gem.html"><strong aria-hidden="true">5.2.2.</strong> Gem</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Setting up the game</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="pages/Unity/CreatingLevels.html"><strong aria-hidden="true">6.1.</strong> Creating Levels</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Keeper of the Flame Technical Document</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="keeper-of-the-flame-technical-document"><a class="header" href="#keeper-of-the-flame-technical-document">Keeper of the Flame Technical Document</a></h1>
+<h2 id="table-of-contents"><a class="header" href="#table-of-contents">Table of Contents</a></h2>
+<ul>
+<li><a href="pages/Classes/">Classes</a>
+<ul>
+<li><a href="pages/Classes/Core/">Core</a>
+<ul>
+<li><a href="pages/Classes/Core/Managers/">Managers</a>
+<ul>
+<li><a href="pages/Classes/Core/Managers/AudioManager.html">Audio Manager</a></li>
+<li><a href="pages/Classes/Core/Managers/GameManager.html">Game Manager</a></li>
+<li><a href="pages/Classes/Core/Managers/GameUIManager.html">Game UI Manager</a></li>
+<li><a href="pages/Classes/Core/Managers/LevelManager.html">Level Manager</a></li>
+<li><a href="pages/Classes/Core/Managers/SystemUIManager.html">System UI Manager</a></li>
+</ul>
+</li>
+<li><a href="pages/Classes/Core/System/">System</a>
+<ul>
+<li><a href="pages/Classes/Core/System/EnemySpawnPoints.html">Enemy Spawn Points</a></li>
+<li><a href="pages/Classes/Core/System/Singleton.html">Singleton</a></li>
+<li><a href="pages/Classes/Core/System/Sound.html">Sound</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="pages/Classes/Gameplay/">Gameplay</a>
+<ul>
+<li><a href="pages/Classes/Gameplay/Characters">Characters</a>
+<ul>
+<li><a href="pages/Classes/Gameplay/Characters/Player/">Player</a>
+<ul>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Animation.html">Animation</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Combat.html">Combat</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Input.html">Input</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Movement.html">Movement</a></li>
+</ul>
+</li>
+<li><a href="pages/Classes/Gameplay/Characters/Enemy/">Enemy</a>
+<ul>
+<li><a href="pages/Classes/Gameplay/Characters/Enemy/Class.html">Class</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="pages/Unity/">Unity</a>
+<ul>
+<li><a href="pages/Unity/Prefabs/">Prefabs</a>
+<ul>
+<li><a href="pages/Unity/Prefabs/Characters/">Characters</a>
+<ul>
+<li><a href="pages/Unity/Prefabs/Characters/Player.html">Player</a></li>
+<li><a href="pages/Unity/Prefabs/Characters/Enemy.html">Enemy</a></li>
+</ul>
+</li>
+<li><a href="pages/Unity/Prefabs/Items/">Items</a>
+<ul>
+<li><a href="pages/Unity/Prefabs/Items/Door.html">Door</a></li>
+<li><a href="pages/Unity/Prefabs/Items/Gem.html">Gem</a></li>
+</ul>
+</li>
+<li><a href="pages/Unity/CreatingLevels.html">Creating Levels</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="audio-manager"><a class="header" href="#audio-manager">Audio Manager</a></h1>
+<h2 id="description"><a class="header" href="#description">Description</a></h2>
+<p>The <code>AudioManager</code> class is used to play <a href="pages/Classes/Core/Managers/../System/Sound.html"><code>Sound</code></a> from a given collection and can be accessed from any class. Inherits from <a href="pages/Classes/Core/Managers/../System/Singleton.html"><code>Singleton</code></a></p>
+<h2 id="variables"><a class="header" href="#variables">Variables</a></h2>
+<table><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>Sound[] sounds</code></td><td>An array of <a href="pages/Classes/Core/Managers/../System/Sound.html"><code>Sound</code></a> which the <code>AudioManager</code> uses to verify if a sound exists</td></tr>
+</tbody></table>
+<h2 id="methods"><a class="header" href="#methods">Methods</a></h2>
+<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody>
+<tr><td>void Play(string name)</td><td>Checks the <code>name</code> from <code>sounds</code> and plays if it is present</td></tr>
+<tr><td>void Play(Sound s)</td><td>Plays <code>s</code> without checking <code>sounds</code></td></tr>
+<tr><td>void Stop(string name)</td><td>Looks for <code>name</code> in <code>sounds</code> and stops it from playing</td></tr>
+</tbody></table>
+<h2 id="snippet"><a class="header" href="#snippet">Snippet</a></h2>
+<pre><code class="language-cs">using System;
+using UnityEngine;
+
+public class AudioManager : Singleton&lt;AudioManager&gt;
+{
+    public Sound[] sounds;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        foreach (Sound s in sounds)
+        {
+            s.source = gameObject.AddComponent&lt;AudioSource&gt;();
+            s.source.clip = s.clip;
+
+            s.source.volume = s.volume;
+            s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
+        }
+    }
+
+    public void Play(string name)
+    {
+        Sound s = Array.Find(sounds, sound =&gt; sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning(&quot;Sound: &quot; + name + &quot; not found&quot;);
+            return;
+        }
+        s.source.Play();
+    }
+
+    public void Play(Sound s)
+    {
+        s.source = gameObject.AddComponent&lt;AudioSource&gt;();
+        s.source.clip = s.clip;
+        s.source.volume = s.volume;
+        s.source.pitch = s.pitch;
+        s.source.loop = s.loop;
+        s.source.Play();
+    }
+    
+    public void Stop(string name)
+    {
+        Sound s = Array.Find(sounds, sound =&gt; sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning(&quot;Sound: &quot; + name + &quot; not found&quot;);
+            return;
+        }
+        s.source.Stop();
+    }
+    
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="game-manager"><a class="header" href="#game-manager">Game Manager</a></h1>
+<h2 id="table-of-contents-1"><a class="header" href="#table-of-contents-1">Table of Contents</a></h2>
+<ul>
+<li><a href="pages/Classes/Core/Managers/GameManager.html#description">Description</a></li>
+<li><a href="pages/Classes/Core/Managers/GameManager.html#variables">Variables</a>
+<ul>
+<li><a href="pages/Classes/Core/Managers/GameManager.html#private">Private</a></li>
+<li><a href="pages/Classes/Core/Managers/GameManager.html#public">Public</a></li>
+</ul>
+</li>
+<li><a href="pages/Classes/Core/Managers/GameManager.html#methods">Methods</a></li>
+<li><a href="pages/Classes/Core/Managers/GameManager.html#snippet">Snippet</a></li>
+</ul>
+<h2 id="description-1"><a class="header" href="#description-1">Description</a></h2>
+<p>The <code>GameManager</code> class handles the start and end of levels as well as keeping track of the time for each round. Inherits from <a href="pages/Classes/Core/Managers/../System/Singleton.html"><code>Singleton</code></a></p>
+<h2 id="variables-1"><a class="header" href="#variables-1">Variables</a></h2>
+<h3 id="private"><a class="header" href="#private">Private</a></h3>
+<table><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>bool _isGameStart</code></td><td>Becomes <code>True</code> when the game starts</td></tr>
+<tr><td><code>bool _isGameEnd</code></td><td>Becomes <code>True</code> when player dies or reaches the exit</td></tr>
+<tr><td><code>float _timer</code></td><td>Used to count the time of the round</td></tr>
+<tr><td><code>TimeSpan _span</code></td><td><a href="https://docs.microsoft.com/en-us/dotnet/api/system.timespan?view=net-6.0"><code>TimeSpan</code></a> used to convert <code>_timer</code> to an <code>mm:ss</code> format</td></tr>
+</tbody></table>
+<h3 id="public"><a class="header" href="#public">Public</a></h3>
+<table><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>bool playerWon</code></td><td><code>True</code> if player reaches the exit; <code>False</code> if they die</td></tr>
+<tr><td><code>bool IsGameStart</code></td><td>public variable of <code>_isGameStart</code></td></tr>
+<tr><td><code>bool IsGameEnd</code></td><td>public variable of <code>_isGameEnd</code></td></tr>
+<tr><td><code>float Timer</code></td><td>public variable of <code>_timer</code></td></tr>
+<tr><td><code>TimeSpan Span</code></td><td>public variable of <code>_span</code></td></tr>
+<tr><td><code>event Action OnGameStart</code></td><td>Event which gets invoked when the game is started</td></tr>
+<tr><td><code>event Action OnGameEnd</code></td><td>Event which gets invoked when the game has ended</td></tr>
+</tbody></table>
+<h2 id="methods-1"><a class="header" href="#methods-1">Methods</a></h2>
+<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>void StartGame()</code></td><td>Invokes <code>OnGameStart</code> and resets the timer</td></tr>
+<tr><td><code>void GameEnd(bool isPlayerWin)</code></td><td>Invokes <code>OnGameEnd</code> and sets value for <code>playerWon</code></td></tr>
+</tbody></table>
+<h2 id="snippet-1"><a class="header" href="#snippet-1">Snippet</a></h2>
+<pre><code class="language-cs">using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameManager : Singleton&lt;GameManager&gt;
+{
+    private bool _isGameStart;
+    private bool _isGameEnd;
+    private float _timer;
+    private TimeSpan _span;
+    
+    public bool playerWon;
+
+    public bool IsGameStart =&gt; _isGameStart;
+    public bool IsGameEnd =&gt; _isGameEnd;
+    public float Timer =&gt; _timer;
+    public TimeSpan Span =&gt; _span;
+    public event Action OnGameStart;
+    public event Action OnGameEnd;
+
+    public void StartGame()
+    {
+        OnGameStart?.Invoke();
+        _timer = 0f;
+        _isGameStart = true;
+        _isGameEnd = false;
+    }
+    
+    private void Update()
+    {
+        if (_isGameStart)
+        {
+            _timer += Time.deltaTime;
+            _span = TimeSpan.FromSeconds(_timer);
+        }
+    }
+
+    public void GameEnd(bool isPlayerWin)
+    {
+        _isGameStart = false;
+        _isGameEnd = true;
+        playerWon = isPlayerWin;
+        OnGameEnd?.Invoke();
+    }
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="game-ui-manager"><a class="header" href="#game-ui-manager">Game UI Manager</a></h1>
+<h2 id="table-of-contents-2"><a class="header" href="#table-of-contents-2">Table of Contents</a></h2>
+<ul>
+<li><a href="pages/Classes/Core/Managers/GameUIManager.html#description">Description</a></li>
+<li><a href="pages/Classes/Core/Managers/GameUIManager.html#variables">Variables</a></li>
+<li><a href="pages/Classes/Core/Managers/GameUIManager.html#methods">Methods</a></li>
+<li><a href="pages/Classes/Core/Managers/GameUIManager.html#snippet">Snippet</a></li>
+</ul>
+<h2 id="description-2"><a class="header" href="#description-2">Description</a></h2>
+<p>The <code>GameUIManager</code> class handles the in-game UI such as the HUD.</p>
+<h2 id="variables-2"><a class="header" href="#variables-2">Variables</a></h2>
+<table><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>CanvasGroup endScreenCanvas</code></td><td><a href="https://docs.unity3d.com/ScriptReference/CanvasGroup.html"><code>CanvasGroup</code></a> used to transition to the end screen</td></tr>
+<tr><td><code>GameObject instructionsCanvas</code></td><td>GameObject of the canvas that displays the game instructions in-world</td></tr>
+<tr><td><code>bool firstRun</code></td><td><code>True</code> when it is only the first run. Used to determine whether instructions should be displayed</td></tr>
+<tr><td><code>GameObject playerCanvas</code></td><td>GameObject of the canvas that displays the HUD</td></tr>
+<tr><td><code>TextMeshProUGUI playerLivesCount</code></td><td><a href="https://docs.unity3d.com/Packages/com.unity.textmeshpro@1.1/api/TMPro.TextMeshProUGUI.html"><code>TextMeshProUGUI</code></a> that displays the player's remaining lives</td></tr>
+<tr><td><code>TextMeshProUGUI timerCountDisplay</code></td><td><a href="https://docs.unity3d.com/Packages/com.unity.textmeshpro@1.1/api/TMPro.TextMeshProUGUI.html"><code>TextMeshProUGUI</code></a> that displays the round time</td></tr>
+<tr><td><code>GameObject GameEndCanvas</code></td><td>GameObject of the canvas that displays the end screen</td></tr>
+<tr><td><code>TextMeshProUGUI GameEndText</code></td><td><a href="https://docs.unity3d.com/Packages/com.unity.textmeshpro@1.1/api/TMPro.TextMeshProUGUI.html"><code>TextMeshProUGUI</code></a> that displays whether the player won or lost</td></tr>
+<tr><td><code>TextMeshProUGUI TimerDisplay</code></td><td><a href="https://docs.unity3d.com/Packages/com.unity.textmeshpro@1.1/api/TMPro.TextMeshProUGUI.html"><code>TextMeshProUGUI</code></a> that displays the time it took for the player to end the level</td></tr>
+<tr><td><code>PlayerCombat _playerCombat</code></td><td><a href="pages/Classes/Core/Managers/Combat.html"><code>PlayerCombat</code></a> component of the player</td></tr>
+</tbody></table>
+<h2 id="methods-2"><a class="header" href="#methods-2">Methods</a></h2>
+<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>void GameOverRoutine()</code></td><td>Hides the HUD and starts showing the end screen</td></tr>
+<tr><td><code>void GameOver()</code></td><td>Sets the correct text and time for the end screen</td></tr>
+<tr><td><code>IEnumerator FadeIn()</code></td><td>Fade in animation for <code>endScreenCanvas</code></td></tr>
+</tbody></table>
+<h2 id="snippet-2"><a class="header" href="#snippet-2">Snippet</a></h2>
+<pre><code class="language-cs">using System.Collections;
+using UnityEngine;
+using TMPro;
+
+public class GameUIManager : MonoBehaviour
+{
+    [Header(&quot;Transitions&quot;)]
+    [SerializeField] private CanvasGroup endScreenCanvas;
+
+    [Header(&quot;In Game Instructions&quot;)]
+    [SerializeField] private GameObject instructionsCanvas;
+    [SerializeField] private bool firstRun = true;
+
+    [Header(&quot;In Game Display&quot;)]
+    [SerializeField] private GameObject playerCanvas;
+    [SerializeField] private TextMeshProUGUI playerLivesCount;
+    [SerializeField] private TextMeshProUGUI timerCountDisplay;
+    
+    [Header(&quot;End Game Display&quot;)]
+    [SerializeField] private GameObject GameEndCanvas;
+    [SerializeField] private TextMeshProUGUI GameEndText;
+    [SerializeField] private TextMeshProUGUI TimerDisplay;
+    
+    private PlayerCombat _playerCombat;
+
+    private void OnEnable()
+    {
+        GameManager.Instance.OnGameStart += () =&gt;
+        {
+            playerCanvas.SetActive(true);
+            
+            if(firstRun) 
+            { instructionsCanvas.SetActive(true); }
+            
+            GameEndCanvas.SetActive(false);
+        };
+
+        GameManager.Instance.OnGameEnd += GameOverRoutine;
+    }
+
+    private void GameOverRoutine()
+    {
+        GameEndCanvas.SetActive(true);
+        playerCanvas.SetActive(false);
+        instructionsCanvas.SetActive(false);
+        endScreenCanvas.alpha = 0;
+        GameOver();
+        StartCoroutine(FadeIn());
+    }
+
+    private void Start()
+    {
+        playerCanvas.SetActive(false);
+        instructionsCanvas.SetActive(false);
+        GameEndCanvas.SetActive(false);
+        AudioManager.Instance.Play(&quot;bgm&quot;);
+    }
+
+    private void Update()
+    {
+        if (!GameManager.Instance.IsGameStart) return;
+        _playerCombat = FindObjectOfType&lt;PlayerCombat&gt;();
+        playerLivesCount.text = $&quot;x {_playerCombat.Health}&quot;;
+        timerCountDisplay.text = $&quot;{(int) GameManager.Instance.Span.TotalMinutes}:{GameManager.Instance.Span.Seconds:00}&quot;;
+        if (FindObjectOfType&lt;PlayerMovement&gt;().HasGem)
+            instructionsCanvas.SetActive(false);
+    }
+
+    private void GameOver()
+    {
+        firstRun = false;
+        if (GameManager.Instance.playerWon)
+        {
+            GameEndText.text = &quot;Congratulations&quot;;
+            GameEndText.color = Color.yellow;
+        }
+        else
+        {
+            GameEndText.text = &quot;Game Over&quot;;
+            GameEndText.color = Color.red;
+        }
+        TimerDisplay.text = $&quot;You ran for {timerCountDisplay.text}&quot;;
+    }
+
+    private IEnumerator FadeIn()
+    {
+        while (endScreenCanvas.alpha != 1)
+        {
+            endScreenCanvas.alpha += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="level-manager"><a class="header" href="#level-manager">Level Manager</a></h1>
+<h2 id="table-of-contents-3"><a class="header" href="#table-of-contents-3">Table of Contents</a></h2>
+<ul>
+<li><a href="pages/Classes/Core/Managers/LevelManager.html#description">Description</a></li>
+<li><a href="pages/Classes/Core/Managers/LevelManager.html#variables">Variables</a></li>
+<li><a href="pages/Classes/Core/Managers/LevelManager.html#methods">Methods</a></li>
+<li><a href="pages/Classes/Core/Managers/LevelManager.html#snippet">Snippet</a></li>
+</ul>
+<h2 id="description-3"><a class="header" href="#description-3">Description</a></h2>
+<p>The <code>LevelManager</code> class handles the loading of levels, tracking of the camera, and spawning of gameobjects.</p>
+<h2 id="variables-3"><a class="header" href="#variables-3">Variables</a></h2>
+<table><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>GameObject[] levels</code></td><td>Walkable levels that are changed in-game</td></tr>
+<tr><td><code>GameObject playerPrefab</code></td><td>Prefab of the player</td></tr>
+<tr><td><code>Transform playerSpawn</code></td><td>Place where the player is spawned on the level</td></tr>
+<tr><td><code>CinemachineVirtualCamera vCam</code></td><td>Reference to a <a href="https://docs.unity3d.com/Packages/com.unity.cinemachine@2.8/api/Cinemachine.CinemachineVirtualCamera.html"><code>CinemachineVirtualCamera</code></a> which follows the player</td></tr>
+<tr><td><code>GameObject _player</code></td><td>Runtime instance of the player</td></tr>
+<tr><td><code>GameObject[] enemyPrefabs</code></td><td>Array of enemy prefabs that can be spawned in the level</td></tr>
+<tr><td><code>EnemySpawnPoints[] enemySpawnPoints</code></td><td>Place where the enemies can be spawned in the levels</td></tr>
+<tr><td><code>List&lt;GameObject&gt; _enemies</code></td><td>Runtime instance of the enemies</td></tr>
+<tr><td><code>GameObject gemPrefab</code></td><td>Prefab of the gem</td></tr>
+<tr><td><code>Transform gemSpawnPoint</code></td><td>Place where the gem is spawned in the level</td></tr>
+<tr><td><code>GameObject _gem</code></td><td>Runtime instance of the gem</td></tr>
+<tr><td><code>GameObject doorPrefab</code></td><td>Prefab of the door</td></tr>
+<tr><td><code>GameObject _door</code></td><td>Runtime instance of the door</td></tr>
+</tbody></table>
+<h2 id="methods-3"><a class="header" href="#methods-3">Methods</a></h2>
+<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>void LoadLevel()</code></td><td>Loads the level</td></tr>
+<tr><td><code>void UnloadLevel()</code></td><td>Clears the level</td></tr>
+<tr><td><code>void ChangeLevel()</code></td><td>Changes the level based on <code>levels</code></td></tr>
+<tr><td><code>void SpawnPlayer()</code></td><td>Spawns player and sets up <code>vCam</code></td></tr>
+<tr><td><code>void SpawnEnemies(int level)</code></td><td>Spawns and relocates enemies depending on the <code>level</code></td></tr>
+<tr><td><code>void SpawnGem()</code></td><td>Spawns the gem</td></tr>
+<tr><td><code>void SpawnDoor()</code></td><td>Spawns the door</td></tr>
+<tr><td><code>void DespawnPlayer()</code></td><td>Despawns the player</td></tr>
+<tr><td><code>void DespawnEnemies()</code></td><td>Despawns the enemies</td></tr>
+<tr><td><code>void DespawnGem()</code></td><td>Despawns the gem</td></tr>
+<tr><td><code>void DespawnDoor()</code></td><td>Despawns the door</td></tr>
+</tbody></table>
+<h2 id="snippet-3"><a class="header" href="#snippet-3">Snippet</a></h2>
+<pre><code class="language-cs">using System.Collections.Generic;
+using UnityEngine;
+using Cinemachine;
+
+public class LevelManager : MonoBehaviour
+{
+    [Header(&quot;Level Spawner&quot;)]
+    [SerializeField] private GameObject[] levels;
+
+    [Header(&quot;Player Spawn&quot;)]
+    [SerializeField] private GameObject playerPrefab;
+    [SerializeField] private Transform playerSpawn;
+    [SerializeField] private CinemachineVirtualCamera vCam;
+
+    private GameObject _player;
+
+    [Header(&quot;Enemy Spawn&quot;)]
+    [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private EnemySpawnPoints[] enemySpawnPoints;
+    [SerializeField] private List&lt;GameObject&gt; _enemies = new List&lt;GameObject&gt;();
+
+    [Header(&quot;Gem Spawn&quot;)]
+    [SerializeField] private GameObject gemPrefab;
+    [SerializeField] private Transform gemSpawnPoint;
+    private GameObject _gem;
+
+    [Header(&quot;Exit Spawn&quot;)]
+    [SerializeField] private GameObject doorPrefab;
+    private GameObject _door;
+    
+    private void OnEnable()
+    {
+        GameManager.Instance.OnGameStart += LoadLevel;
+        //GameManager.Instance.OnGameEnd += UnloadLevel;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.Instance.OnGameStart -= LoadLevel;
+        _player.GetComponent&lt;PlayerMovement&gt;().OnGemObtain -= ChangeLevel;
+        //GameManager.Instance.OnGameEnd -= UnloadLevel;
+    }
+
+    private void LoadLevel()
+    {
+        // Despawns everything in the game to make sure that there are no duplicates
+        UnloadLevel();
+        
+        levels[0].SetActive(true);
+        levels[1].SetActive(false);
+        
+        SpawnPlayer();
+        SpawnEnemies(0);
+        SpawnGem();
+        
+        _player.GetComponent&lt;PlayerMovement&gt;().OnGemObtain += () =&gt;
+        {
+            SpawnEnemies(1);
+            SpawnDoor();
+        };
+    }
+
+    public void UnloadLevel()
+    {
+        DespawnPlayer();
+        DespawnEnemies();
+        DespawnGem();
+        DespawnDoor();
+    }
+
+    private void ChangeLevel()
+    {
+        print(&quot;Changing Level&quot;);
+        levels[0].SetActive(false);
+        levels[1].SetActive(true);
+    }
+    
+    private void SpawnPlayer()
+    {
+        _player = Instantiate(playerPrefab, playerSpawn.position, Quaternion.identity);
+        _player.GetComponent&lt;PlayerMovement&gt;().OnGemObtain += ChangeLevel;
+        vCam.m_Follow = _player.transform;
+    }
+
+    private void SpawnEnemies(int level)
+    {
+        if(level == 0)
+            DespawnEnemies();
+
+        var points = enemySpawnPoints[level].points;
+
+        for (int i = 0; i &lt; points.Length; i++)
+        {
+            _enemies.Add(Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Length)], points[i].position, Quaternion.identity));
+        }
+        
+        print(_enemies.Count + &quot; | &quot; + points.Length );
+        
+        if (_enemies.Count &gt; points.Length)
+        {
+            for (int i = 0; i &lt; points.Length; i++)
+            {
+                if(_enemies[i] != null){
+                    _enemies[i].transform.position = points[i].transform.position;
+                }
+            }
+        }
+    }
+
+    private void SpawnGem()
+    {
+        _gem = Instantiate(gemPrefab, gemSpawnPoint.position, Quaternion.identity);
+    }
+
+    private void SpawnDoor()
+    {
+        _door = Instantiate(doorPrefab, playerSpawn.position, Quaternion.identity);
+    }
+    
+    private void DespawnPlayer()
+    {
+        Destroy(_player);
+    }
+
+    private void DespawnEnemies()
+    {
+        foreach (var enemy in _enemies)
+        {
+            if (enemy != null)
+            {
+                Destroy(enemy);
+            }
+        }
+        _enemies.Clear();
+    }
+
+    private void DespawnGem()
+    {
+        Destroy(_gem);
+    }
+
+    private void DespawnDoor()
+    {
+        Destroy(_door);
+    }
+    
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="system-ui-manager"><a class="header" href="#system-ui-manager">System UI Manager</a></h1>
+<h2 id="table-of-contents-4"><a class="header" href="#table-of-contents-4">Table of Contents</a></h2>
+<ul>
+<li><a href="pages/Classes/Core/Managers/SystemUIManager.html#description">Description</a></li>
+<li><a href="pages/Classes/Core/Managers/SystemUIManager.html#variables">Variables</a></li>
+<li><a href="pages/Classes/Core/Managers/SystemUIManager.html#methods">Methods</a></li>
+<li><a href="pages/Classes/Core/Managers/SystemUIManager.html#snippet">Snippet</a></li>
+</ul>
+<h2 id="description-4"><a class="header" href="#description-4">Description</a></h2>
+<p>The <code>SystemUIManager</code> class handles system UI like menus and the instructions page.</p>
+<h2 id="variables-4"><a class="header" href="#variables-4">Variables</a></h2>
+<table><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody>
+<tr><td>Animator transitions</td><td><a href="https://docs.unity3d.com/ScriptReference/Animator.html"><code>Animator</code></a> of an image for transitions found in the game scene</td></tr>
+<tr><td>GameObject mainMenuUI</td><td>GameObject of the canvas that displays the main menu</td></tr>
+<tr><td>GameObject instructionsUI</td><td>GameObject of the canvas that displays the instructions</td></tr>
+<tr><td>GameObject gameEndUI</td><td>GameObject of the canvas that displays the end screen</td></tr>
+</tbody></table>
+<h2 id="methods-4"><a class="header" href="#methods-4">Methods</a></h2>
+<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody>
+<tr><td>void OnGameStart()</td><td>Hides the main menu when game starts</td></tr>
+<tr><td>void StartGame()</td><td>Used by a <a href="https://docs.unity3d.com/ScriptReference/UIElements.Button.html"><code>Button</code></a> to start the game when clicked</td></tr>
+<tr><td>IEnumerator ToggleGame()</td><td>Plays transition and starts the game</td></tr>
+<tr><td>void ShowInstructions</td><td>Used by a <a href="https://docs.unity3d.com/ScriptReference/UIElements.Button.html"><code>Button</code></a> to show instructions when clicked</td></tr>
+<tr><td>IEnumerator ToggleInstructions()</td><td>Plays transition and whows instructions page</td></tr>
+<tr><td>void ReturnToMainMenu()</td><td>Used by a <a href="https://docs.unity3d.com/ScriptReference/UIElements.Button.html"><code>Button</code></a> to show return to main menu when clicked</td></tr>
+<tr><td>IEnumerator ToggleMainMenu()</td><td>Plays transition and shows main menu</td></tr>
+<tr><td>void ExitGame()</td><td>Used by a <a href="https://docs.unity3d.com/ScriptReference/UIElements.Button.html"><code>Button</code></a> to show return to exit the game when clicked</td></tr>
+<tr><td>IEnumerator TransitionFade()</td><td>Fade animation for <code>transitions</code></td></tr>
+</tbody></table>
+<h2 id="snippet-4"><a class="header" href="#snippet-4">Snippet</a></h2>
+<pre><code class="language-cs">using System.Collections;
+using UnityEngine;
+using TMPro;
+
+public class SystemUIManager : MonoBehaviour
+{
+    [Header(&quot;Transitions&quot;)]
+    [SerializeField] private Animator transitions;
+    
+    [Header(&quot;Game Canvas&quot;)]
+    [SerializeField] private GameObject mainMenuUI;
+    [SerializeField] private GameObject instructionsUI;
+    [SerializeField] private GameObject gameEndUI;
+
+    private void OnEnable()
+    {
+        GameManager.Instance.OnGameStart += OnGameStart;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.Instance.OnGameStart -= OnGameStart;
+    }
+
+
+    private void Start()
+    {
+        mainMenuUI.SetActive(true);
+        instructionsUI.SetActive(false);
+    }
+
+    private void OnGameStart()
+    {
+        mainMenuUI.SetActive(false);
+    }
+
+    public void StartGame()
+    {
+        StartCoroutine(ToggleGame());
+    }
+
+    private IEnumerator ToggleGame()
+    {
+        AudioManager.Instance.Play(&quot;Click&quot;);
+        StartCoroutine(TransitionFade());
+        yield return new WaitForSeconds(1f);
+        GameManager.Instance.StartGame();
+    }
+
+    public void ShowInstructions()
+    {
+        StartCoroutine(ToggleInstructions());
+    }
+
+    private IEnumerator ToggleInstructions()
+    {
+        AudioManager.Instance.Play(&quot;Click&quot;);
+        StartCoroutine(TransitionFade());
+        yield return new WaitForSeconds(1f);
+        mainMenuUI.SetActive(false);
+        instructionsUI.SetActive(true);
+    }
+
+    public void ReturnToMainMenu()
+    {
+        StartCoroutine(ToggleMainMenu());
+    }
+
+    private IEnumerator ToggleMainMenu()
+    {
+        AudioManager.Instance.Play(&quot;Click&quot;);
+        StartCoroutine(TransitionFade());
+        yield return new WaitForSeconds(1f);
+        FindObjectOfType&lt;LevelManager&gt;().UnloadLevel();
+        mainMenuUI.SetActive(true);
+        instructionsUI.SetActive(false);
+        gameEndUI.SetActive(false);
+    }
+
+    public void ExitGame()
+    {
+        AudioManager.Instance.Play(&quot;Click&quot;);
+        Application.Quit();
+    }
+
+    private IEnumerator TransitionFade()
+    {
+        transitions.SetTrigger(&quot;FadeOut&quot;);
+        yield return new WaitForSeconds(1f);
+        transitions.SetTrigger(&quot;FadeIn&quot;);
+
+    }
+    
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="enemy-spawn-points"><a class="header" href="#enemy-spawn-points">Enemy Spawn Points</a></h1>
+<h2 id="description-5"><a class="header" href="#description-5">Description</a></h2>
+<p>The <code>EnemySpawnPoints</code> class is used to contain multiple spawn points per level for easier use with the <a href="pages/Classes/Core/System/../Managers/LevelManager.html"><code>LevelManager</code></a></p>
+<h2 id="snippet-5"><a class="header" href="#snippet-5">Snippet</a></h2>
+<pre><code class="language-cs">using UnityEngine;
+
+public class EnemySpawnPoints : MonoBehaviour
+{
+    public Transform[] points;
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="singleton"><a class="header" href="#singleton">Singleton</a></h1>
+<h2 id="description-6"><a class="header" href="#description-6">Description</a></h2>
+<p>Used to create a <a href="https://sourcemaking.com/design_patterns/singleton"><code>Singleton</code></a> out of any <code>Monobehaviour</code> class</p>
+<h2 id="snippet-6"><a class="header" href="#snippet-6">Snippet</a></h2>
+<pre><code class="language-cs">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Singleton&lt;T&gt; : MonoBehaviour
+    where T:MonoBehaviour
+{
+    private static T _instance;
+
+    public static T Instance
+    {
+        get
+        {
+            //if there is no instance yet,
+            if (!_instance)
+            {
+                //find an existing gameobject in the scene that has the generic component
+                _instance = (T)FindObjectOfType(typeof(T));
+            }
+            //if after checking the scene, we still don't have an instance..
+            if (!_instance)
+            {
+                //load a gameobject from the resources folder that has the generic component
+                //check if the system folder in the resources has the name of the generic component
+                if(Resources.Load&lt;T&gt;(&quot;System/&quot; + (typeof(T)).Name) != null)
+                {
+                    //if there is a prefab in the system folder,
+                    //instantiate that object and set it as the instance
+                    T instance = Resources.Load&lt;T&gt;(&quot;System/&quot; + (typeof(T)).Name);
+                    T go = (T)Instantiate(instance);
+                    _instance = go;
+                }
+                else
+                {
+                    _instance = null;
+                }
+            }
+            return _instance;
+        }
+    }
+
+    [SerializeField]
+    private bool isPersist = false;
+
+    protected virtual void Awake()
+    {
+        //if there is no instance, set self as the instance
+        if (_instance == null)
+            _instance = this as T;
+
+        //if there is already an existing instance
+        if(_instance != null)
+        {
+            //check if self is not the actual instance
+            if(_instance != this as T)
+            {
+                //Destroy self because there can only be one instance
+                Destroy(this.gameObject);
+            }
+        }
+
+        if (isPersist)
+            DontDestroyOnLoad(this.gameObject);
+    }
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sound"><a class="header" href="#sound">Sound</a></h1>
+<h2 id="description-7"><a class="header" href="#description-7">Description</a></h2>
+<p>A serialized class that allows for ease of use with handling audio files.</p>
+<h2 id="snippet-7"><a class="header" href="#snippet-7">Snippet</a></h2>
+<pre><code class="language-cs">using UnityEngine;
+
+[System.Serializable]
+public class Sound
+{
+    public string name;
+
+    public AudioClip clip;
+
+    [Range(0f, 1f)]
+    public float volume;
+    [Range(0f, 1f)]
+    public float pitch;
+
+    public bool loop;
+
+    [HideInInspector]
+    public AudioSource source;
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="animation"><a class="header" href="#animation">Animation</a></h1>
+<h2 id="table-of-contents-5"><a class="header" href="#table-of-contents-5">Table of Contents</a></h2>
+<ul>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Animation.html#description">Description</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Animation.html#animator-tree">Animator Tree</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Animation.html#variables">Variables</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Animation.html#methods">Methods</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Animation.html#snippet">Snippet</a></li>
+</ul>
+<h2 id="description-8"><a class="header" href="#description-8">Description</a></h2>
+<p>The <code>PlayerAnimation</code> class handles the animations of the player.</p>
+<h2 id="animator-tree"><a class="header" href="#animator-tree">Animator Tree</a></h2>
+<p><img src="pages/Classes/Gameplay/Characters/Player/../../../../../attachments/Player/Player%20Animator.png" alt="Player Animator" /></p>
+<h2 id="variables-5"><a class="header" href="#variables-5">Variables</a></h2>
+<table><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>Animator _animator</code></td><td><a href="https://docs.unity3d.com/ScriptReference/Animator.html"><code>Animator</code></a> component of the player</td></tr>
+<tr><td><code>PlayerInput _input</code></td><td><a href="pages/Classes/Gameplay/Characters/Player/Input.html"><code>PlayerInput</code></a> component of the player</td></tr>
+<tr><td><code>PlayerMovement _movement</code></td><td><a href="pages/Classes/Gameplay/Characters/Player/Movement.html"><code>PlayerMovement</code></a> component of the player</td></tr>
+<tr><td><code>PlayerCombat _combat</code></td><td><a href="pages/Classes/Gameplay/Characters/Player/Combat.html"><code>PlayerCombat</code></a> component of the player</td></tr>
+</tbody></table>
+<h2 id="methods-5"><a class="header" href="#methods-5">Methods</a></h2>
+<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>void Jump()</code></td><td>Plays jump animation</td></tr>
+<tr><td><code>void Attack()</code></td><td>Plays attack animation</td></tr>
+<tr><td><code>void GetDamaged()</code></td><td>Plays hurt animation</td></tr>
+<tr><td><code>void DeathAnimation()</code></td><td>Plays death animation</td></tr>
+<tr><td><code>IEnumerator DeathRoutine()</code></td><td>Coroutine that composes the death animation</td></tr>
+</tbody></table>
+<h2 id="snippet-8"><a class="header" href="#snippet-8">Snippet</a></h2>
+<pre><code class="language-cs">using System.Collections;
+using UnityEngine;
+
+public class PlayerAnimations : MonoBehaviour
+{
+    private Animator _animator;
+    private PlayerInput _input;
+    private PlayerMovement _movement;
+    private PlayerCombat _combat;
+
+    private void Awake()
+    {
+        _animator = GetComponent&lt;Animator&gt;();
+        _input = GetComponent&lt;PlayerInput&gt;();
+        _movement = GetComponent&lt;PlayerMovement&gt;();
+        _combat = GetComponent&lt;PlayerCombat&gt;();
+    }
+
+    private void OnEnable()
+    {
+        _input.Jump += Jump;
+        _input.Attack += Attack;
+        _combat.GetDamaged += GetDamaged;
+        _combat.OnDeath += DeathAnimation;
+    }
+
+    private void OnDisable()
+    {
+        _input.Jump -= Jump;
+        _input.Attack -= Attack;
+        _combat.GetDamaged -= GetDamaged;
+        _combat.OnDeath -= DeathAnimation;
+    }
+
+    private void Update()
+    {
+        _animator.SetInteger(&quot;AnimState&quot;, _input.Direction != 0 ? 1 : 0);
+        _animator.SetFloat(&quot;AirSpeedY&quot;, _movement.RB2D.velocity.y);
+        _animator.SetBool(&quot;Grounded&quot;, _movement.IsGrounded);
+    }
+
+    private void Jump()
+    {
+        AudioManager.Instance.Play(&quot;Jump&quot;);
+        _animator.SetTrigger(&quot;Jump&quot;);
+    }
+
+    private void Attack()
+    {
+        AudioManager.Instance.Play(_movement.IsGrounded ? &quot;atkGround&quot; : &quot;atkAir&quot;);
+        _animator.SetTrigger(_movement.IsGrounded ? &quot;Attack3&quot; : &quot;Attack1&quot;);
+    }
+
+    private void GetDamaged()
+    {
+        AudioManager.Instance.Play(&quot;Hurt&quot;);
+        _animator.SetTrigger(&quot;Hurt&quot;);
+    }
+
+    private void DeathAnimation()
+    {
+        StartCoroutine(DeathRoutine());
+    }
+    
+    private IEnumerator DeathRoutine()
+    {
+        AudioManager.Instance.Play(&quot;Death&quot;);
+        _animator.SetTrigger(&quot;Hurt&quot;);
+        yield return new WaitForSeconds(0.273f);
+        _animator.SetTrigger(&quot;Death&quot;);
+        yield return new WaitForSeconds(1f);
+        GameManager.Instance.GameEnd(isPlayerWin:false);
+    }
+    
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="combat"><a class="header" href="#combat">Combat</a></h1>
+<h2 id="table-of-contents-6"><a class="header" href="#table-of-contents-6">Table of Contents</a></h2>
+<ul>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Combat.html#description">Description</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Combat.html#variables">Variables</a>
+<ul>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Combat.html#private">Private</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Combat.html#public">Public</a></li>
+</ul>
+</li>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Combat.html#methods">Methods</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Combat.html#snippet">Snippet</a></li>
+</ul>
+<h2 id="description-9"><a class="header" href="#description-9">Description</a></h2>
+<p>The <code>PlayerCombat</code> class handles the combat system of the player.</p>
+<h2 id="variables-6"><a class="header" href="#variables-6">Variables</a></h2>
+<h3 id="private-1"><a class="header" href="#private-1">Private</a></h3>
+<table><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>float maxHealth</code></td><td>The max health of the player</td></tr>
+<tr><td><code>float _currentHealth</code></td><td>The current health of the player</td></tr>
+<tr><td><code>bool _isDead</code></td><td><code>True</code> when the player is dead</td></tr>
+<tr><td><code>float startTimeBtwAttack</code></td><td>The maximum time between attacks</td></tr>
+<tr><td><code>Transform attackPos</code></td><td>The position of where the attack would start</td></tr>
+<tr><td><code>float attackRange</code></td><td>Determines the area of attack from the <code>attackPos</code></td></tr>
+<tr><td><code>LayerMask enemyLayer</code></td><td>Determines which layers are the enemy</td></tr>
+<tr><td><code>float damage</code></td><td>The damage amount given by the player</td></tr>
+<tr><td><code>PlayerInput _input</code></td><td><a href="pages/Classes/Gameplay/Characters/Player/Input.html"><code>PlayerInput</code></a> component of the player</td></tr>
+<tr><td><code>float _timeBtwAttack</code></td><td>The time it takes before the next attack</td></tr>
+<tr><td><code>bool _canAttack</code></td><td><code>True</code> when <code>_timeBtwAttack</code> is 0</td></tr>
+</tbody></table>
+<h3 id="public-1"><a class="header" href="#public-1">Public</a></h3>
+<table><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>float Health</code></td><td>public variable for <code>_currentHealth</code></td></tr>
+<tr><td><code>bool CanAttack</code></td><td>public variable for <code>_canAttack</code></td></tr>
+<tr><td><code>bool IsDead</code></td><td>public variable for <code>_isDead</code></td></tr>
+<tr><td><code>event Action GetDamaged</code></td><td>Event which gets invoked when the player gets damaged</td></tr>
+<tr><td><code>event Action OnDeath</code></td><td>Event which gets invoked when the player dies</td></tr>
+</tbody></table>
+<h2 id="methods-6"><a class="header" href="#methods-6">Methods</a></h2>
+<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>void Attack()</code></td><td>Uses <a href="https://docs.unity3d.com/ScriptReference/Physics2D.OverlapCircleAll.html"><code>Physics2D.OverlapCircleAll</code></a> to deal damage to enemies within the <code>attackRange</code></td></tr>
+<tr><td><code>void TakeDamage(float damageAmount)</code></td><td>Invokes <code>GetDamaged</code> action and reduces the health of the player based on the <code>damageAmount</code> taken</td></tr>
+<tr><td><code>IEnumerator DeathRoutine()</code></td><td>Invokes <code>OnDeath</code> action upon the death of the player</td></tr>
+</tbody></table>
+<h2 id="snippet-9"><a class="header" href="#snippet-9">Snippet</a></h2>
+<pre><code class="language-cs">using System;
+using System.Collections;
+using UnityEngine;
+
+public class PlayerCombat : MonoBehaviour
+{
+    [Header(&quot;Health&quot;)]
+    [SerializeField] private float maxHealth;
+    private float _currentHealth;
+    private bool _isDead;
+    
+    [Header(&quot;Attack Info&quot;)]
+    [SerializeField] private float startTimeBtwAttack;
+    [SerializeField] private Transform attackPos;
+    [SerializeField] private float attackRange;
+    [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private float damage;
+
+    private PlayerInput _input;
+    private float _timeBtwAttack;
+    private bool _canAttack;
+
+    public float Health =&gt; _currentHealth &lt;= 0 ? 0 : _currentHealth;
+    public bool CanAttack =&gt; _canAttack;
+    public bool IsDead =&gt; _isDead;
+
+    public event Action GetDamaged;
+    public event Action OnDeath;
+
+    private void Awake()
+    {
+        _input = GetComponent&lt;PlayerInput&gt;();
+    }
+
+    private void OnEnable()
+    {
+        _input.Attack += Attack;
+    }
+
+    private void OnDisable()
+    {
+        _input.Attack -= Attack;
+    }
+
+    private void Start()
+    {
+        _timeBtwAttack = startTimeBtwAttack;
+        _currentHealth = maxHealth;
+        StartCoroutine(DeathRoutine());
+    }
+    
+    private void Update()
+    {
+        if (_currentHealth &lt;= 0)
+        {
+            _isDead = true;
+        }
+        
+        if (_timeBtwAttack &lt;= 0)
+        {
+            _canAttack = true;
+        }
+        else
+        {
+            _canAttack = false;
+            _timeBtwAttack -= Time.deltaTime;
+        }
+    }
+
+    private void Attack()
+    {
+        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, enemyLayer);
+        foreach (var enemy in enemiesToDamage)
+        {
+            enemy.GetComponent&lt;Enemy&gt;().TakeDamage(damage);
+        }
+        _timeBtwAttack = startTimeBtwAttack;
+    }
+
+    public void TakeDamage(float damageAmount)
+    {
+        if (_isDead) return;
+        GetDamaged?.Invoke();
+        _currentHealth -= damageAmount;
+    }
+
+    private IEnumerator DeathRoutine()
+    {
+        while (!_isDead)
+        {
+            yield return null;
+        }
+        OnDeath?.Invoke();
+    }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position,attackRange);
+    }
+    
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="input"><a class="header" href="#input">Input</a></h1>
+<h2 id="table-of-contents-7"><a class="header" href="#table-of-contents-7">Table of Contents</a></h2>
+<ul>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Input.html#description">Description</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Input.html#variables">Variables</a>
+<ul>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Input.html#private">Private</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Input.html#public">Public</a></li>
+</ul>
+</li>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Input.html#snippet">Snippet</a></li>
+</ul>
+<h2 id="description-10"><a class="header" href="#description-10">Description</a></h2>
+<p>The <code>PlayerInput</code> class handles the inputs of the player.</p>
+<h2 id="variables-7"><a class="header" href="#variables-7">Variables</a></h2>
+<h3 id="private-2"><a class="header" href="#private-2">Private</a></h3>
+<table><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>PlayerMovement _movement</code></td><td><a href="pages/Classes/Gameplay/Characters/Player/Movement.html"><code>PlayerMovement</code></a> component of the player</td></tr>
+<tr><td><code>PlayerCombat _combat</code></td><td><a href="pages/Classes/Gameplay/Characters/Player/Combat.html"><code>PlayerCombat</code></a> component of the player</td></tr>
+<tr><td><code>float _direction</code></td><td>The direction which the player based on <code>Input.GetAxisRaw(&quot;Horizontal&quot;</code>)</td></tr>
+<tr><td><code>bool _isFlipped</code></td><td><code>True</code> when the player is facing opposite their default direction</td></tr>
+</tbody></table>
+<h3 id="public-2"><a class="header" href="#public-2">Public</a></h3>
+<table><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>float Direction</code></td><td>public variable of <code>_direction</code></td></tr>
+<tr><td><code>bool IsFlipped</code></td><td>public variable of <code>_isFlipped</code></td></tr>
+<tr><td><code>event Action Jump</code></td><td>Event which gets invoked whenever the jump button is pressed</td></tr>
+<tr><td><code>event Action Attack</code></td><td>Event which gets invoked whenever the attack button is pressed</td></tr>
+</tbody></table>
+<h2 id="snippet-10"><a class="header" href="#snippet-10">Snippet</a></h2>
+<pre><code class="language-cs">using System;
+using UnityEngine;
+
+public class PlayerInput : MonoBehaviour
+{
+    private PlayerMovement _movement;
+    private PlayerCombat _combat;
+
+    private float _direction;
+    private bool _isFlipped;
+   
+    public float Direction =&gt; _direction;
+    public bool IsFlipped =&gt; _isFlipped;
+    
+    public event Action Jump;
+    public event Action Attack;
+
+    private void Awake()
+    {
+        _movement = GetComponent&lt;PlayerMovement&gt;();
+        _combat = GetComponent&lt;PlayerCombat&gt;();
+    }
+    
+    private void Update()
+    {
+        // Doesn't return any inputs if player is dead
+        if (_combat.IsDead) return;
+
+        // Prevents player from flipping while game isn't playing
+        _direction = GameManager.Instance.IsGameEnd ? 0 : Input.GetAxisRaw(&quot;Horizontal&quot;);
+
+        if (_direction &lt; 0)
+        {
+            _isFlipped = true;
+        }
+        // used else if to retain player orientation
+        else if (_direction &gt; 0)
+        {
+            _isFlipped = false;
+        }
+        
+        // Makes sure that Attack can only be invoked if player is able to attack
+        if(Input.GetKeyDown(KeyCode.Z) &amp;&amp; _combat.CanAttack){Attack?.Invoke();}
+        
+        // Makes sure that Jump can only be invoked if player is grounded
+        if(Input.GetKeyDown(KeyCode.X) &amp;&amp; _movement.IsGrounded){Jump?.Invoke();}
+    }
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="movement"><a class="header" href="#movement">Movement</a></h1>
+<h2 id="table-of-contents-8"><a class="header" href="#table-of-contents-8">Table of Contents</a></h2>
+<ul>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Movement.html#description">Description</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Movement.html#variables">Variables</a>
+<ul>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Movement.html#private">Private</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Movement.html#public">Public</a></li>
+</ul>
+</li>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Movement.html#methods">Methods</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Player/Movement.html#snippet">Snippet</a></li>
+</ul>
+<h2 id="description-11"><a class="header" href="#description-11">Description</a></h2>
+<p>The <code>PlayerMovement</code> class handles the movement and physics of the player.</p>
+<h2 id="variables-8"><a class="header" href="#variables-8">Variables</a></h2>
+<h3 id="private-3"><a class="header" href="#private-3">Private</a></h3>
+<table><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>float movementSpeed</code></td><td>Determines how fast the player movement is</td></tr>
+<tr><td><code>float jumpForce</code></td><td>Determines how high the player jumps</td></tr>
+<tr><td><code>PlayerInput _input</code></td><td><a href="pages/Classes/Gameplay/Characters/Player/Input.html"><code>PlayerInput</code></a> component of the player</td></tr>
+<tr><td><code>PlayerCombat _combat</code></td><td><a href="pages/Classes/Gameplay/Characters/Player/Combat.html"><code>PlayerCombat</code></a> component of the player</td></tr>
+<tr><td><code>Rigidbody2D _rb2D</code></td><td><a href="https://docs.unity3d.com/ScriptReference/Rigidbody2D.html"><code>RigidyBody2D</code></a> component of the player</td></tr>
+<tr><td><code>bool _isGrounded</code></td><td>Determines whether the player is grounded</td></tr>
+<tr><td><code>bool _hasGem</code></td><td>Determines whether the player has the gem</td></tr>
+</tbody></table>
+<h3 id="public-3"><a class="header" href="#public-3">Public</a></h3>
+<table><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>Rigidbody2D RB2D</code></td><td>public variable of <code>_rb2D</code></td></tr>
+<tr><td><code>bool IsGrounded</code></td><td>public variable of <code>_isGrounded</code></td></tr>
+<tr><td><code>bool HasGem</code></td><td>public variable of <code>_hasGem</code></td></tr>
+<tr><td><code>event Action OnGemObtain</code></td><td>Event which gets invoked when <a href="pages/Classes/Gameplay/Characters/Player/../../Items/Gem.html"><code>Gem</code></a> is obtained</td></tr>
+</tbody></table>
+<h2 id="methods-7"><a class="header" href="#methods-7">Methods</a></h2>
+<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>void Jump()</code></td><td>Adds force to the rigidbody to make the player jump</td></tr>
+</tbody></table>
+<h2 id="snippet-11"><a class="header" href="#snippet-11">Snippet</a></h2>
+<pre><code class="language-cs">using System;
+using UnityEngine;
+
+public class PlayerMovement : MonoBehaviour
+{
+    [Header(&quot;Movement Values&quot;)] 
+    [SerializeField] private float movementSpeed;
+    [SerializeField] private float jumpForce;
+    
+    private PlayerInput _input;
+    private PlayerCombat _combat;
+    private Rigidbody2D _rb2D;
+    private bool _isGrounded;
+    private bool _hasGem;
+
+    public Rigidbody2D RB2D =&gt; _rb2D;
+    public bool IsGrounded =&gt; _isGrounded;
+    public bool HasGem =&gt; _hasGem;
+
+    public event Action OnGemObtain;
+
+    private void Awake()
+    {
+        _input = GetComponent&lt;PlayerInput&gt;();
+        _combat = GetComponent&lt;PlayerCombat&gt;();
+        _rb2D = GetComponent&lt;Rigidbody2D&gt;();
+    }
+
+    private void OnEnable()
+    {
+        _input.Jump += Jump;
+    }
+
+    private void OnDisable()
+    {
+        _input.Jump -= Jump;
+    }
+    
+    private void Update()
+    {
+        transform.rotation = _input.IsFlipped ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
+    }
+
+    private void FixedUpdate()
+    {
+        _rb2D.velocity = _combat.IsDead ? 
+                Vector2.zero : 
+                new Vector2(_input.Direction * movementSpeed, _rb2D.velocity.y);
+    }
+
+    private void Jump()
+    {
+        _isGrounded = false;
+        _rb2D.velocity = Vector2.up * jumpForce;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.CompareTag(&quot;Ground&quot;))
+        {
+            AudioManager.Instance.Play(&quot;Land&quot;);
+            _isGrounded = true;
+        }
+
+        if (other.collider.CompareTag(&quot;Gem&quot;))
+        {
+            AudioManager.Instance.Play(&quot;Gem&quot;);
+            Destroy(other.gameObject);
+            _hasGem = true;
+            OnGemObtain?.Invoke();
+        }
+
+        if (other.collider.CompareTag(&quot;Exit&quot;))
+        {
+            AudioManager.Instance.Play(&quot;Exit&quot;);
+            GameManager.Instance.GameEnd(isPlayerWin:true);
+        }
+        
+    }
+    
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.collider.CompareTag(&quot;Ground&quot;))
+        {
+            _isGrounded = false;
+        }
+    }
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="enemy"><a class="header" href="#enemy">Enemy</a></h1>
+<h2 id="table-of-contents-9"><a class="header" href="#table-of-contents-9">Table of Contents</a></h2>
+<ul>
+<li><a href="pages/Classes/Gameplay/Characters/Enemy/Class.html#description">Description</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Enemy/Class.html#variables">Variables</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Enemy/Class.html#methods">Methods</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Enemy/Class.html#snippet">Snippet</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Enemy/Class.html#prefab">Prefab</a>
+<ul>
+<li><a href="pages/Classes/Gameplay/Characters/Enemy/Class.html#structure">Structure</a>
+<ul>
+<li><a href="pages/Classes/Gameplay/Characters/Enemy/Class.html#hierarchy">Hierarchy</a></li>
+<li><a href="pages/Classes/Gameplay/Characters/Enemy/Class.html#components">Components</a></li>
+</ul>
+</li>
+<li><a href="pages/Classes/Gameplay/Characters/Enemy/Class.html#gizmos">Gizmos</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="description-12"><a class="header" href="#description-12">Description</a></h2>
+<p>The <code>Enemy</code> class contains all logic of the enemy.</p>
+<h2 id="variables-9"><a class="header" href="#variables-9">Variables</a></h2>
+<table><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>float maxHealth</code></td><td>The max health of the enemy</td></tr>
+<tr><td><code>float movementSpeed</code></td><td>Determines how fast the enemy is</td></tr>
+<tr><td><code>Transform eyes</code></td><td>Determines where the eyes on the enemy is placed</td></tr>
+<tr><td><code>LayerMask playerlayer</code></td><td>Determines which layers are the player</td></tr>
+<tr><td><code>float viewRange</code></td><td>Range which the enemy can see the player</td></tr>
+<tr><td><code>float chaseViewRange</code></td><td>Range which the enemy can chase the player</td></tr>
+<tr><td><code>float stanceViewRange</code></td><td>Range of the enemy from the player before entering a stance</td></tr>
+<tr><td><code>float attackViewRange</code></td><td>Range of the enemy from the player before attacking</td></tr>
+<tr><td><code>float damage</code></td><td>The damage amount given by the enemy</td></tr>
+<tr><td><code>Transform attackPos</code></td><td>The position of where the attack would start</td></tr>
+<tr><td><code>float attackRange</code></td><td>Determines the area of attack from the <code>attackPos</code></td></tr>
+<tr><td><code>float startTimeBtwAttack</code></td><td>The maximum time between attacks</td></tr>
+<tr><td><code>float _timeBtwAttack</code></td><td>The time it takes before the next attack</td></tr>
+<tr><td><code>Sound hurtSFX</code></td><td><a href="pages/Classes/Gameplay/Characters/Enemy/../../Core/System/Sound.html">Sound</a> played when the enemy is hurt</td></tr>
+<tr><td><code>Sound attackSFX</code></td><td><a href="pages/Classes/Gameplay/Characters/Enemy/../../Core/System/Sound.html">Sound</a> played when the enemy attacks</td></tr>
+<tr><td><code>float _currentHealth</code></td><td>The current health of the enemy</td></tr>
+<tr><td><code>Animator _animator</code></td><td><a href="https://docs.unity3d.com/ScriptReference/Animator.html"><code>Animator</code></a> component of the enemy</td></tr>
+<tr><td><code>BoxCollider2D _collider</code></td><td><a href="https://docs.unity3d.com/ScriptReference/BoxCollider2D.html"><code>BoxCollider2D</code></a> component of the enemy</td></tr>
+<tr><td><code>Rigidbody2D _rigidbody2D</code></td><td><a href="https://docs.unity3d.com/ScriptReference/Rigidbody2D.html"><code>Rigidbody2D</code></a> component of the enemy</td></tr>
+<tr><td><code>bool _isFlipped</code></td><td><code>True</code> when the enemy is facing opposite their default direction</td></tr>
+<tr><td><code>bool _isDead</code></td><td><code>True</code> when enemy is dead</td></tr>
+<tr><td><code>bool _isPlayerWithinView</code></td><td><code>True</code> when player is within range based on <code>viewRange</code></td></tr>
+<tr><td><code>bool _isPlayerWithinChase</code></td><td><code>True</code> when player is within range based on <code>chaseViewRange</code></td></tr>
+<tr><td><code>bool _isPlayerWithinStance</code></td><td><code>True</code> when player is within range based on <code>stanceViewRange</code></td></tr>
+<tr><td><code>bool _isPlayerWithinAttack</code></td><td><code>True</code> when player is within range based on <code>attackViewRange</code></td></tr>
+<tr><td><code>bool _canAttack</code></td><td><code>True</code> when <code>_timeBtwAttack</code> is 0</td></tr>
+</tbody></table>
+<h2 id="methods-8"><a class="header" href="#methods-8">Methods</a></h2>
+<table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody>
+<tr><td>void Attack()</td><td>Plays the attack animation and resets <code>_timeBtwAttack</code></td></tr>
+<tr><td>void GiveDamage()</td><td>Uses <a href="https://docs.unity3d.com/ScriptReference/Physics2D.OverlapCircleAll.html"><code>Physics2D.OverlapCircleAll</code></a> to deal damage to the player within the <code>attackRange</code></td></tr>
+<tr><td>void TakeDamage(float damageAmount)</td><td>Reduces the health of the enemy based on the <code>damageAmount</code> taken</td></tr>
+<tr><td>IEnumerator DeathRoutine()</td><td>Plays death animation and destroys the enemy gameobject</td></tr>
+</tbody></table>
+<h2 id="snippet-12"><a class="header" href="#snippet-12">Snippet</a></h2>
+<pre><code class="language-cs">using System.Collections;
+using UnityEngine;
+
+public class Enemy : MonoBehaviour
+{
+    [Header(&quot;Health&quot;)]
+    [SerializeField] private float maxHealth;
+
+    [Header(&quot;Movement&quot;)]
+    [SerializeField] private float movementSpeed;
+
+    [Header(&quot;Attack Detection&quot;)]
+    [SerializeField] private Transform eyes;
+    [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private float viewRange;
+    [SerializeField] private float chaseViewRange;
+    [SerializeField] private float stanceViewRange;
+    [SerializeField] private float attackViewRange;
+
+    [Header(&quot;Attack Execution&quot;)]
+    [SerializeField] private float damage;
+    [SerializeField] private Transform attackPos;
+    [SerializeField] private float attackRange;
+    [SerializeField] private float startTimeBtwAttack;
+    private float _timeBtwAttack;
+
+    [Header(&quot;Audio&quot;)]
+    [SerializeField] private Sound hurtSFX;
+    [SerializeField] private Sound attackSFX;
+
+    private float _currentHealth;
+    private Animator _animator;
+    private BoxCollider2D _collider;
+    private Rigidbody2D _rigidbody2D;
+    private bool _isFlipped;
+    private bool _isDead;
+    private bool _isPlayerWithinView;
+    private bool _isPlayerWithinChase;
+    private bool _isPlayerWithinStance;
+    private bool _isPlayerWithinAttack;
+    private bool _canAttack;
+
+    private void Awake()
+    {
+        _animator = GetComponent&lt;Animator&gt;();
+        _collider = GetComponent&lt;BoxCollider2D&gt;();
+        _rigidbody2D = GetComponent&lt;Rigidbody2D&gt;();
+    }
+    private void Start()
+    {
+        _currentHealth = maxHealth;
+        _timeBtwAttack = startTimeBtwAttack;
+        _collider.enabled = true;
+        _rigidbody2D.isKinematic = false;
+        StartCoroutine(DeathRoutine());
+    }
+
+    private void Update()
+    {
+        if (_isDead) return;
+
+        if (_currentHealth &lt;= 0) { _isDead = true; }
+
+        if (_timeBtwAttack &lt;= 0)
+        {
+            _canAttack = true;
+        }
+        else
+        {
+            _canAttack = false;
+            _timeBtwAttack -= Time.deltaTime;
+        }
+
+        _isPlayerWithinView = Physics2D.OverlapCircle(transform.position, viewRange, playerLayer);
+        _isPlayerWithinChase = Physics2D.Raycast(eyes.position, -transform.right, chaseViewRange, playerLayer);
+        _isPlayerWithinStance = Physics2D.Raycast(eyes.position, -transform.right, stanceViewRange, playerLayer);
+        _isPlayerWithinAttack = Physics2D.Raycast(eyes.position, -transform.right, attackViewRange, playerLayer);
+
+        transform.rotation = _isFlipped ? Quaternion.Euler(0, 180f, 0) : Quaternion.identity;
+
+        if (_isPlayerWithinView)
+        {
+
+            var collision = Physics2D.OverlapCircle(transform.position, viewRange, playerLayer);
+
+            _isFlipped = !(collision.transform.position.x &lt; transform.position.x);
+
+            if (_isPlayerWithinChase)
+            {
+                // Move towards player
+
+                _rigidbody2D.velocity = new Vector2(-transform.right.x * movementSpeed, _rigidbody2D.velocity.y);
+
+                _animator.SetInteger(&quot;AnimState&quot;, 2);
+
+                if (_isPlayerWithinStance)
+                {
+                    _rigidbody2D.velocity = Vector2.zero;
+                    _animator.SetInteger(&quot;AnimState&quot;, 1);
+                }
+
+                if (_isPlayerWithinAttack &amp;&amp; _canAttack)
+                {
+                    _rigidbody2D.velocity = Vector2.zero;
+                    var player = Physics2D.Raycast(eyes.position, -transform.right, attackViewRange, playerLayer).collider;
+                    if (!player.GetComponent&lt;PlayerCombat&gt;().IsDead)
+                        Attack();
+                }
+
+            }
+            else
+            {
+                _rigidbody2D.velocity = Vector2.zero;
+                _animator.SetInteger(&quot;AnimState&quot;, 0);
+            }
+        }
+    }
+
+    private void Attack()
+    {
+        _animator.SetTrigger(&quot;Attack&quot;);
+        // GiveDamage is invoked so that the player takes damage during the animation
+        Invoke(&quot;GiveDamage&quot;, 0.4f);
+        _timeBtwAttack = startTimeBtwAttack;
+    }
+
+    private void GiveDamage()
+    {
+        Collider2D[] playerToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, playerLayer);
+        AudioManager.Instance.Play(attackSFX);
+        foreach (var player in playerToDamage)
+        {
+            player.GetComponent&lt;PlayerCombat&gt;().TakeDamage(damage);
+        }
+    }
+
+    public void TakeDamage(float damageAmount)
+    {
+        AudioManager.Instance.Play(hurtSFX);
+        _animator.SetTrigger(&quot;Hurt&quot;);
+        _currentHealth -= damageAmount;
+    }
+
+    private IEnumerator DeathRoutine()
+    {
+        while (!_isDead)
+        {
+            yield return null;
+        }
+        _collider.enabled = false;
+        _rigidbody2D.isKinematic = true;
+        _rigidbody2D.velocity = Vector2.zero;
+        _animator.SetTrigger(&quot;Hurt&quot;);
+        yield return new WaitForSeconds(0.25f);
+        _animator.SetTrigger(&quot;Death&quot;);
+        Destroy(gameObject, 1f);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, viewRange);
+        Gizmos.DrawRay(eyes.position, -transform.right * chaseViewRange);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawRay(eyes.position - Vector3.up * 0.25f, -transform.right * stanceViewRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(eyes.position - Vector3.up * 0.5f, -transform.right * attackViewRange);
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+    }
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="player-prefab"><a class="header" href="#player-prefab">Player Prefab</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="enemy-prefab"><a class="header" href="#enemy-prefab">Enemy Prefab</a></h1>
+<h2 id="structure"><a class="header" href="#structure">Structure</a></h2>
+<p><img src="pages/Unity/Prefabs/Characters/../../../../attachments/Enemy/Enemy%20Prefab.png" alt="" /></p>
+<h3 id="hierarchy"><a class="header" href="#hierarchy">Hierarchy</a></h3>
+<p><img src="pages/Unity/Prefabs/Characters/../../../../attachments/Enemy/Enemy%20Prefab%20Hierarchy.png" alt="" /></p>
+<ul>
+<li>Light Bandit
+<ul>
+<li>Eyes</li>
+<li>AtkPoint</li>
+</ul>
+</li>
+</ul>
+<h3 id="components"><a class="header" href="#components">Components</a></h3>
+<ul>
+<li>Light Bandit
+<ol>
+<li>Transform</li>
+<li>Sprite Renderer</li>
+<li>Animator</li>
+<li>Box Collider 2D</li>
+<li>Rigidbody 2D</li>
+<li>Enemy (script)</li>
+</ol>
+</li>
+<li>Eyes
+<ol>
+<li>Transform</li>
+</ol>
+</li>
+<li>AtkPoint
+<ol>
+<li>Transform</li>
+</ol>
+</li>
+</ul>
+<h2 id="gizmos"><a class="header" href="#gizmos">Gizmos</a></h2>
+<p><img src="pages/Unity/Prefabs/Characters/../../../../attachments/Enemy/Enemy%20View%20Gizmos.png" alt="" /></p>
+<ol>
+<li>Eyes - Yellow Circle</li>
+<li>View Range - Green Wire Circle</li>
+<li>Chase View Range - Green Line</li>
+<li>Stance View Range - Yellow Line</li>
+<li>Attack View Range - Red Line</li>
+</ol>
+<p><img src="pages/Unity/Prefabs/Characters/../../../../attachments/Enemy/Enemy%20Attack%20Gizmos.png" alt="" /></p>
+<ol>
+<li>Attack Point - Red Circle</li>
+<li>Attack Range - Red Wire Circle</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="door"><a class="header" href="#door">Door</a></h1>
+<h2 id="description-13"><a class="header" href="#description-13">Description</a></h2>
+<p>Only spawns once the player collects the <a href="pages/Unity/Prefabs/Items/Gem.html"><code>Gem</code></a>. Once reached, the game ends.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="gem"><a class="header" href="#gem">Gem</a></h1>
+<h2 id="description-14"><a class="header" href="#description-14">Description</a></h2>
+<p>Upon reaching the gem, the level changes and enemies are spawned and relocated</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="creating-levels"><a class="header" href="#creating-levels">Creating Levels</a></h1>
+<blockquote>
+<p><strong>NOTE:</strong> <a href="pages/Unity/../Classes/Core/Managers/LevelManager.html"><code>LevelManager</code></a> is hardcoded to only use two levels for now.</p>
+</blockquote>
+<h2 id="creating-the-levels"><a class="header" href="#creating-the-levels">Creating the levels</a></h2>
+<ol>
+<li>In the Heirarchy, look for the <code>Grid</code> gameobject under <code>== LEVEL ==</code>
+<br><img src="pages/Unity/../../attachments/Unity/Creating%20Levels/Creating%20the%20levels/Step%201.gif" alt="Step 1" /></li>
+<li>Add a child <code>Rectangular Tilemap</code> to <code>Grid</code> and name it <code>Level x</code> where <code>x</code> is the number of the level
+<br><img src="pages/Unity/../../attachments/Unity/Creating%20Levels/Creating%20the%20levels/Step%202.gif" alt="Step 2" /></li>
+<li>In the inspector, add a <code>Tilemap Collider 2D</code> and <code>Composite Collider 2D</code> to <code>Level x</code>
+<br><img src="pages/Unity/../../attachments/Unity/Creating%20Levels/Creating%20the%20levels/Step%203.gif" alt="Step 3" /></li>
+<li>On <code>Tilemap Collider 2D</code>, tick the <code>Used By Composite</code> box and set the <code>Body Type</code> to <code>Static</code> in the <code>Rigidbody2D</code> component
+<br><img src="pages/Unity/../../attachments/Unity/Creating%20Levels/Creating%20the%20levels/Step%204.gif" alt="Step 4" /></li>
+<li>Draw the level using the <code>Tile Pallete</code>
+<br><img src="pages/Unity/../../attachments/Unity/Creating%20Levels/Creating%20the%20levels/Step%205.gif" alt="Step 5" /></li>
+<li>Set a <code>Ground</code> tag on the level. 
+<br><img src="pages/Unity/../../attachments/Unity/Creating%20Levels/Creating%20the%20levels/Step%206.gif" alt="Step 6" /></li>
+<li>Repeat steps 2 - 6 for each level needed.</li>
+</ol>
+<h2 id="setting-the-placements"><a class="header" href="#setting-the-placements">Setting the placements</a></h2>
+<blockquote>
+<p><strong>NOTE:</strong> <code>Player Spawn</code> is also where the <code>Door</code> spawns so it is important to always keep it accessible.</p>
+</blockquote>
+<ol>
+<li>Create an empty gameobject, name it <code>Player Spawn</code>, give it a gizmo for visibility, set its position, and place it under <code>== SPAWN LOCATIONS ==</code>
+<br><img src="pages/Unity/../../attachments/Unity/Creating%20Levels/Setting%20the%20placements/Step1.gif" alt="Step 1" /></li>
+<li>Duplicate <code>Player Spawn</code>, name it <code>Gem Spawn</code> and change its gizmo and location, and place it under <code>== SPAWN LOCATIONS ==</code>
+<br><img src="pages/Unity/../../attachments/Unity/Creating%20Levels/Setting%20the%20placements/Step2.gif" alt="Step 2" /></li>
+<li>Create an empty gameobject, name it <code>Enemy Spawns</code> and place it under <code>== SPAWN LOCATIONS ==</code>
+<br><img src="pages/Unity/../../attachments/Unity/Creating%20Levels/Setting%20the%20placements/Step3.1.gif" alt="Step 3.1" /></li>
+<li>Create a child gameobject under <code>Enemy Spawns</code> and name it after the intended level of that enemy spawn position. Add an <code>EnemySpawnPoints</code> to that child object.
+<br><img src="pages/Unity/../../attachments/Unity/Creating%20Levels/Setting%20the%20placements/Step3.2.gif" alt="Step 3.2" /></li>
+<li>Add child gameobjects to the <code>Level</code> and set its positions. These are where the enemies will spawn.
+<br><img src="pages/Unity/../../attachments/Unity/Creating%20Levels/Setting%20the%20placements/Step3.3.gif" alt="Step 3.3" /></li>
+<li>Go to the parent gameobject and lock its properties in the inspector. Grab the enemy positions and place it in the `` field in the <code>EnemySpawnPoints</code>
+<br><img src="pages/Unity/../../attachments/Unity/Creating%20Levels/Setting%20the%20placements/Step3.4.gif" alt="Step 3.4" /></li>
+<li>Repeat steps 4-6 for each level made.</li>
+</ol>
+<blockquote>
+<p><strong>NOTE:</strong> As of the moment, each level has to have the same amount of spawn locations for the enemies in order to spawn properly.</p>
+</blockquote>
+<h2 id="using-the-levelmanager"><a class="header" href="#using-the-levelmanager">Using the LevelManager</a></h2>
+<ol>
+<li>Under <code>== MANAGER ==</code> look for <code>LevelManager</code>, and lock its properties in the inspector.
+<br><img src="pages/Unity/../../attachments/Unity/Creating%20Levels/Using%20the%20LevelManager/Step1.gif" alt="Step 1" /></li>
+<li>In the <code>LevelManager</code>, attach the created levels under the <code>Levels</code> field, place the <code>Player Spawn</code> gameobject under the <code>Player Spawn</code> field, add the <code>Gem Spawn</code> gameobject to the <code>Gem Spawn Point</code> field, and finally grab the levels under <code>Enemy Spawn</code> and drag it to the <code>EnemySpawnPoints</code> field.
+<br><img src="pages/Unity/../../attachments/Unity/Creating%20Levels/Using%20the%20LevelManager/Step2.gif" alt="Step 2" /></li>
+<li>Enter play mode and it should be able to load all the levels and enemies properly.
+<br> <img src="pages/Unity/../../attachments/Unity/Creating%20Levels/Using%20the%20LevelManager/Step3.gif" alt="Step 3" /></li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>
